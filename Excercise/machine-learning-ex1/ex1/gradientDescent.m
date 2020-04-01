@@ -30,8 +30,7 @@ for iter = 1:num_iters
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
     
-    printf('J is %d\n',J_history(iter));
-    
+%    printf('J is %d\n',J_history(iter));   
 end
 
 end

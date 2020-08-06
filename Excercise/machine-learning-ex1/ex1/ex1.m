@@ -74,7 +74,7 @@ pause;
 
 fprintf('\nRunning Gradient Descent ...\n')
 % run gradient descent
-[theta,J_history] = gradientDescent(X, y, theta, alpha, iterations);
+[theta,J_history,theta2_history] = gradientDescent(X, y, theta, alpha, iterations);
 
 % print theta to screen
 fprintf('Theta found by gradient descent:\n');
@@ -92,6 +92,11 @@ hold off % don't overlay any more plots on this figure
 figure;
 plot([1:iterations],J_history,'LineWidth', 2);
 xlabel('Iter'); ylabel('J');
+
+figure;
+plot([1:iterations],theta2_history,'LineWidth', 2);
+xlabel('Iter'); ylabel('Theta2');
+
 % end added
 
 
@@ -139,4 +144,4 @@ figure;
 contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
 xlabel('\theta_0'); ylabel('\theta_1');
 hold on;
-plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
+plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 20);
